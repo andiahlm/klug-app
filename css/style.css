@@ -1,0 +1,48 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+  padding-top: 50px;
+}
+
+.container-fluid {
+    max-width: 480px;
+}
+
+.translationContainer{
+	border: 1px solid white;
+	padding:10px;
+	background-color: #00C4FF;
+	color: white; 
+}
+
+.translation{
+	margin-left: 100px;
+}
+.medialist{
+	height:180px;
+}
+.mediaimage{
+	width:66.6%;
+	overflow: hidden;
+}
+.mediatext{
+	width:33.3%;
+	background-color: #00C4FF;
+	height: 100%;
+    padding: 10px;
+    color: white;   
+}
+.medialist:nth-child(odd) .mediaimage {
+    float: left;
+}
+.medialist:nth-child(even) .mediaimage{
+    float: right;
+}
+.medialist:nth-child(odd) .mediatext {
+    float: right;
+}
+.medialist:nth-child(even) .mediatext{
+    float: left;
+}
+

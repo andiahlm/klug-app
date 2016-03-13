@@ -1,0 +1,22 @@
+﻿
+<h3>{{mediaName}}</h3>
+<div class="row">
+  	<div class="col-md-12">
+    	<youtube-video video-id="videoid" player="player" player-width="'450px'" player-height="'280px'"></youtube-video>
+    	
+  	</div>
+</div>
+<!-- <div class="row">
+   	<div class="col-md-12">
+        <span>{{currenttime}}</span>
+      	<div class="btn-group" role="group" aria-label="...">
+          	<button type="button" class="btn btn-default" ng-click="player.playVideo()">Play</button>
+          	<button type="button" class="btn btn-default" ng-click="player.stopVideo()">Stop</button>
+      	</div>     
+   </div>
+</div>-->  
+<div class="col-md-12 translationContainer" ng-repeat="word in translation | filter: intervallSmallerThan('time')">
+    <span class="glyphicon glyphicon-minus" ng-click="removeWord(word.wordid)"></span>
+    <span class="translation"><label>{{word.word}}</label>: <label>{{word.translation}}</label></span>
+    <span class="glyphicon glyphicon-plus pull-right" ng-click="addWord(word.wordid)"></span>
+</div>

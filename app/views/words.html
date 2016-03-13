@@ -1,0 +1,9 @@
+﻿<div class="row" ng-init="initController()">
+	<div class="col-md-12" >
+	    <h1>Hi {{user.username}}!</h1>
+		<h3>Here is your wordlist:</h3>
+	</div>
+	<div class="col-md-12 translationContainer" ng-repeat="word in userwords">
+    	<span class="translation"><label>{{word.word}}</label>: <label>{{word.trans}}</label></span>
+	</div>
+</div>
