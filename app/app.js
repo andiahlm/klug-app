@@ -2,7 +2,9 @@
 
 angular.module('app', ['ngRoute', 'ngCookies', 'ngResource', 'ng-token-auth', 'youtube-embed']) //
 
-.config(function ($routeProvider, $locationProvider, $httpProvider, $authProvider) { //
+.constant('API_URL', 'http://localhost:3000/')
+
+.config(function ($routeProvider, $locationProvider, $httpProvider, $authProvider, API_URL) { //
 
     //$httpProvider.interceptors.push('authInterceptorService');
 
@@ -45,18 +47,19 @@ angular.module('app', ['ngRoute', 'ngCookies', 'ngResource', 'ng-token-auth', 'y
         $authProvider.configure([
             { 
                 default: {
-                    apiUrl: 'http://localhost:3000'
+                    apiUrl: API_URL
                 }
             },
             {
                 admin: {
-                    apiUrl:  'http://localhost:3000',
-                    signOutUrl:            '/admin_auth/sign_out',
-                    emailSignInPath:       '/admin_auth/sign_in',
-                    tokenValidationPath:   '/admin_auth/validate_token',
+                    apiUrl:  API_URL,
+                    signOutUrl:            'admin_auth/sign_out',
+                    emailSignInPath:       'admin_auth/sign_in',
+                    tokenValidationPath:   'admin_auth/validate_token',
                 }
             }
         ]);
+
 })
 .run(function run($rootScope, $location, $http, $auth) {
 

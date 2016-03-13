@@ -3,7 +3,7 @@
 
 var app = angular.module('app');
 
-app.factory('WordService', function ($http) {
+app.factory('WordService', function ($http, API_URL) {
 
     var service = {};
 
@@ -15,15 +15,15 @@ app.factory('WordService', function ($http) {
     return service;  
 
     function word(id) { 
-        return $http.get('http://localhost:3000/userwords/' + id ).then(handleSuccess, handleError('Error getting media'));
+        return $http.get(API_URL + 'userwords/' + id ).then(handleSuccess, handleError('Error getting media'));
     }
 
     function addUserWord(wordid) { 
-        return $http.post('http://localhost:3000/userwords/add', {userword: {word_id: wordid}}).then(handleSuccess, handleError('Error adding word'));
+        return $http.post(API_URL + 'userwords/add', {userword: {word_id: wordid}}).then(handleSuccess, handleError('Error adding word'));
     } 
 
     function removeUserWord(wordid) { 
-        return $http.post('http://localhost:3000/userwords/remove', {userword: {word_id: wordid}}).then(handleSuccess, handleError('Error removing word'));
+        return $http.post(API_URL + 'userwords/remove', {userword: {word_id: wordid}}).then(handleSuccess, handleError('Error removing word'));
     }   
 
     function handleSuccess(response) {
