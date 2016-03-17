@@ -2,7 +2,7 @@
 
 angular.module('app', ['ngRoute', 'ngCookies', 'ngResource', 'ng-token-auth', 'youtube-embed']) //
 
-.constant('API_URL', 'http://localhost:3000/')
+.constant('API_URL', 'https://lit-dusk-60245.herokuapp.com/') //http://localhost:3000/
 
 .config(function ($routeProvider, $locationProvider, $httpProvider, $authProvider, API_URL) { //
 
@@ -25,7 +25,7 @@ angular.module('app', ['ngRoute', 'ngCookies', 'ngResource', 'ng-token-auth', 'y
             controller: 'YoutubeController',
             templateUrl: 'app/views/youtube.html',
         })
-        .when('/words', {
+        .when('/words/:id', {
             controller: 'WordsController',
             templateUrl: 'app/views/words.html',
         })
