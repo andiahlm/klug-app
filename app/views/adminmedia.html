@@ -3,9 +3,13 @@
 	    <h1>Hi {{user.uid}}!</h1>
 		<h3>Medialist</h3>
 	</div>
-		<div class="col-md-12" ng-repeat="media in mediaList">
-	        <a href="#/adminmedium/{{media.id}}" >
-	        	<h5>{{media.name}}</h5>
-	        </a>
-		</div>
+	<div class="col-md-12" ng-repeat="media in mediaList">
+	    <a href="#/adminmedium/{{media.id}}" >
+	        <h5>{{media.name}}</h5>
+	    </a>
+	</div>
+	<div class="col-md-12" ng-repeat="media in mediaList">
+	    <a href="#/adminmedium" class="btn btn-info" role="button">New Medium</a>
+	</div>
+	
 </div>

@@ -17,11 +17,11 @@ app.factory('WordService', function ($http, API_URL) {
 
 
     function word(id) { 
-        return $http.get(API_URL + 'words/' + id ).then(handleSuccess, handleError('Error getting media'));
+        return $http.get(API_URL + '/words/' + id ).then(handleSuccess, handleError('Error getting media'));
     }
 
     function updateword(id, translation) { 
-        return $http.put(API_URL + 'words/' + id, {word: {id: id, translation: translation}}).then(handleSuccess, handleError('Error adding word'));
+        return $http.put(API_URL + '/words/' + id, {word: {id: id, translation: translation}}).then(handleSuccess, handleError('Error adding word'));
     }
 
     function googleTranslation(word) { 
@@ -29,11 +29,11 @@ app.factory('WordService', function ($http, API_URL) {
     } 
 
     function addUserWord(wordid) { 
-        return $http.post(API_URL + 'userwords/add', {userword: {word_id: wordid}}).then(handleSuccess, handleError('Error adding word'));
+        return $http.post(API_URL + '/userwords/add', {userword: {word_id: wordid}}).then(handleSuccess, handleError('Error adding word'));
     } 
 
     function removeUserWord(wordid) { 
-        return $http.post(API_URL + 'userwords/remove', {userword: {word_id: wordid}}).then(handleSuccess, handleError('Error removing word'));
+        return $http.post(API_URL + '/userwords/remove', {userword: {word_id: wordid}}).then(handleSuccess, handleError('Error removing word'));
     }   
 
     function handleSuccess(response) {

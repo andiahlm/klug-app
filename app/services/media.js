@@ -14,11 +14,11 @@ app.factory('MediaService', function ($http, API_URL) {
     return service;    
 
     function medium(id) { 
-        return $http.get(API_URL + 'media/' + id + '/translate' ).then(handleSuccess, handleError('Error getting media'));
+        return $http.get(API_URL + '/media/' + id + '/translate' ).then(handleSuccess, handleError('Error getting media'));
     }
 
     function media() { 
-        return $http.get(API_URL + 'media').then(handleSuccess, handleError('Error getting all media'));
+        return $http.get(API_URL + '/media').then(handleSuccess, handleError('Error getting all media'));
     }
 
 

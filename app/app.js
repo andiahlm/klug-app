@@ -2,7 +2,7 @@
 
 angular.module('app', ['ngRoute', 'ngCookies', 'ngResource', 'ng-token-auth', 'youtube-embed']) //
 
-.constant('API_URL', 'https://lit-dusk-60245.herokuapp.com/') //http://localhost:3000/
+.constant('API_URL', 'https://lit-dusk-60245.herokuapp.com') //http://localhost:3000/
 
 .config(function ($routeProvider, $locationProvider, $httpProvider, $authProvider, API_URL) { //
 
@@ -53,9 +53,9 @@ angular.module('app', ['ngRoute', 'ngCookies', 'ngResource', 'ng-token-auth', 'y
             {
                 admin: {
                     apiUrl:  API_URL,
-                    signOutUrl:            'admin_auth/sign_out',
-                    emailSignInPath:       'admin_auth/sign_in',
-                    tokenValidationPath:   'admin_auth/validate_token',
+                    signOutUrl:            '/admin_auth/sign_out',
+                    emailSignInPath:       '/admin_auth/sign_in',
+                    tokenValidationPath:   '/admin_auth/validate_token',
                 }
             }
         ]);
